@@ -8,6 +8,6 @@ const pathUrl = __dirname + '/views/index.html';
 // });
 
 app.get("/", (req, res)  => {
-res.send(pathUrl)
+res.sendFile(pathUrl)
 })
 module.exports = app;
