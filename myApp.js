@@ -16,7 +16,7 @@ app.use(function middleware(req, res, next) {
 })
 app.get("/", (req, res)  => {
 res.sendFile(pathUrl)
-})
+});
 app.get("/json", (req, res) => {
     if(process.env.MESSAGE_STYLE === 'uppercase'){
         res.json({ message: "HELLO JSON" });
@@ -24,4 +24,11 @@ app.get("/json", (req, res) => {
     res.json({ message: "Hello json" });
     }
 });
+app-this.get("/now", (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+}, (req, res) => {
+    res.json({time: req.time});
+});
+
 module.exports = app;
