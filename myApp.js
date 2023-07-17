@@ -8,7 +8,7 @@ const pathPublic = __dirname + '/public';
 //   res.send("Hello Express");
 // });
 
-app.use(express.static(pathPublic));
+app.use("/public",express.static(pathPublic));
 
 app.get("/", (req, res)  => {
 res.sendFile(pathUrl)
