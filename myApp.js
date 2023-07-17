@@ -13,4 +13,7 @@ app.use("/public",express.static(pathPublic));
 app.get("/", (req, res)  => {
 res.sendFile(pathUrl)
 })
+app.get("/json", (req, res) => {
+    res.json({ message: "Hello json" });
+});
 module.exports = app;
